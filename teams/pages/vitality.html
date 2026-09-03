@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 WORLD - Vitality</title>
+    <link rel="icon" href="../../file_00000000335c8243a36f62e7d1c72d21.png">
+    <style>
+         .site-header {
+    width: 100%;
+    height: 80px;
+
+    background: rgba(10, 10, 10, 0.96);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 165, 0, 0.35);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+.logo {
+    color: white;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: orange;
+}
+
+
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.main-nav a {
+    position: relative;
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: white;
+}
+
+
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    background: orange;
+
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+
+
+.play-btn {
+    display: inline-block;
+
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    background: orange;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background: white;
+
+    transform: translateY(-2px);
+}
+
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+.team-detail {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    padding: 50px 30px 80px;
+    background: #0b0b0b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+.team-detail img {
+    width: 700px !important;
+    height: 400px !important;
+    max-width: none !important;
+    margin-bottom: 25px;
+    transition: 0.4 ease;
+}
+.team-detail img:hover {
+    transform: scale(1.08);
+}
+.team-detail h1 {
+    margin: 0 0 15px;
+    color: white;
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    bottom: 10px;
+    margin-top: 10px;
+}
+.team-detail p {
+    max-width: 700px;
+    margin: 0;
+    color: #999;
+    font-size: 17px;
+    line-height: 1.8;
+}
+.team-info {
+    width: 100%;
+    max-width: 800px;
+
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 20px;
+}
+.info-box {
+    padding: 25px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.info-box:hover {
+    border-color: orange;
+    transform: translateY(-4px);
+}
+.info-box span {
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.info-box strong {
+    color: white;
+    font-size: 20px;
+}
+.players-section {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 60px;
+}
+.players-section > h2 {
+    color: white;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+    gap: 15px;
+}
+.players-card {
+    padding: 20px 10px;
+    background: #151515;
+    border: 1px solid #292929;
+    text-align: center;
+    transition: 0.3s;
+}
+.player-card:hover {
+    transform: translateY(-6px);
+    border-color: orange;
+}
+.player-avatar {
+    width: 80px;
+    height: 80px;
+    margin: o auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #222;
+    color: orange;
+    font-size: 28px;
+    font-weight: bold;
+}
+.players-card h3 {
+    margin: 0 0 8px;
+    color: white;
+    font-size: 16px;
+}
+.players-card span {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.team-stats {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 0px;
+    text-align: center;
+}
+.team-stats h2 {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.stat-box {
+    padding: 25px 15px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.3s;
+}
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: orange;
+}
+.stat-box span {
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.stat-box strong {
+    color: orange;
+    font-size: 28px;
+}
+.trophies-section {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 70px;
+}
+.trophies-section > h2 {
+    color: white;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+.trophies-grid {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 20px;
+}
+.trophy-card {
+    padding: 30px 20px;
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+.trophy-card:hover {
+    transform: translateY(-6px);
+    border-color: orange;
+}
+.trophy-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+.trophy-card h3 {
+    color: white;
+    font-size: 17px;
+    margin: 0 0 10px;
+}
+.trophy-card span {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+.back-btn {
+    position: fixed;
+    top: 25px;
+    left: 25Px;
+
+    padding: 10px 18px;
+
+    color: white;
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+.back-btn:hover {
+    color: orange;
+    border-color: orange;
+    transform: translateX(-3px);
+}
+         body {
+        animation: pageEnter 0.7s ease-out;
+    }
+    @keyframes pageEnter {
+        from {
+            opacity: 0;
+            transform: translateY(35px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }    
+       
+    </style>
+</head>
+<body>
+      <a onclick="history.back()" class="back-btn">BACK</a>
+<main class="team-detail">
+    <img src="bpxy74bxngd91.jpg" alt="Vitality">
+    <h1>Vitality</h1>
+    <p>
+        Vitality is one of the mpsy famous Counter-Strike teams.
+    </p>
+    <section class="team-info">
+        <div class="info-box">
+            <span>COUNTRY</span>
+            <strong>France</strong>
+        </div>
+        <div class="info-box">
+            <span>REGION</span>
+            <strong>Europe</strong>
+        </div>
+        <div class="info-box">
+            <span>WORLD RANK</span>
+            <strong>#4</strong>
+        </div>
+    </section>
+    <section class="players-section">
+        <h2>PLAYERS</h2>
+        <div class="players-grid">
+            <div class="player-card">
+                <div class="player-avatar">1</div>
+                <h3>b1t</h3>
+                <span>RIFLER</span>
+            </div>
+            <div class="player-card">
+                <div class="player-avatar">2</div>
+                <h3>Aleksib</h3>
+                <span>AWPER</span>
+            </div>
+            <div class="player-card">
+                <div class="player-avatar">3</div>
+                <h3>iM</h3>
+                <span>RIFLER</span>
+            </div>
+            <div class="player-card">
+                <div class="player-avatar">4</div>
+                <h3>wOnderful</h3>
+                <span>IGL</span>
+            </div>
+            <div class="player-card">
+                <div class="player-avatar">5</div>
+                <h3>Makazze</h3>
+                <span>RIFLER</span>
+            </div>
+        </div>
+    </section>
+    <section class="team-stats">
+        <h2>TEAM STATS</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span>WINS</span>
+                <strong>73</strong>
+            </div>
+            <div class="stat-box">
+                <span>LOSSES</span>
+                <strong>51</strong>
+            </div>
+            <div class="stat-box">
+                <span>EVENTS</span>
+                <strong>42</strong>
+            </div>
+            <div class="stat-box">
+                <span>WIN RATE</span>
+                <strong>62%</strong>
+            </div>
+        </div>
+    </section>
+    <section class="trophies-section">
+        <h2>TROPHIES</h2>
+        <div class="trophies-grid">
+            <div class="trophy-card">
+                <div class="trophy-icon">🏆</div>
+                <h3>BLAST Premier World Final 2025</h3>
+                <span>CHAMPION</span>
+            </div>
+            <div class="trophy-card">
+                <div class="trophy-icon">🏆</div>
+                <h3>IEM Krakow 2026</h3>
+                <span>CHAMPION</span>
+            </div>
+            <div class="trophy-card">
+                <div class="trophy-icon">🏆</div>
+                <h3>PGL Cluj-Napoca 2026</h3>
+                <span>CHAMPION</span>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

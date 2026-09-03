@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 WORLD - GAMEMODES</title>
+    <link rel="icon" href="file_00000000335c8243a36f62e7d1c72d21.png">
+    <style>
+        body {
+            background-color: #111;
+        }
+ .site-header {
+    width: 100%;
+    height: 80px;
+
+    background: rgba(10, 10, 10, 0.96);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 165, 0, 0.35);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+
+.logo {
+    color: white;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: orange;
+}
+
+
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.main-nav a {
+    position: relative;
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: white;
+}
+
+
+
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    background: orange;
+
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+
+
+.play-btn {
+    display: inline-block;
+
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    background: orange;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background: white;
+
+    transform: translateY(-2px);
+}
+.modes-page {
+    min-height: 100vh;
+    padding: 100px 8%;
+    background: #080808;
+}
+.modes-header {
+    margin-bottom: 60px;
+}
+.modes-header span {
+    color: orange;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+.modes-header h1 {
+    color: white;
+    font-size: 55px;
+    margin: 10px 0;
+}
+.modes-header p {
+    color: #777;
+}
+.mode-row {
+    position: relative;
+
+    min-height: 170px;
+    margin-bottom: 18px;
+    padding: 20px 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    background: #111;
+    border: 1px solid #222;
+
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+.mode-row:hover {
+    border-color: orange;
+    transform: translateX(8px);
+}
+.mode-number {
+    color: #444;
+    font-size: 30px;
+    font-weight: bold;
+}
+.mode-info {
+    flex: 1;
+    z-index: 2;
+}
+.mode-info span {
+    color: orange;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.mode-info h2 {
+    color: white;
+    font-size: 30px;
+    margin: 8px 0;
+}
+.mode-info p {
+    color: #777;
+    margin: 0;
+}
+.mode-image {
+    width: 300px;
+    height: 130px;
+    overflow: hidden;
+}
+.mode-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+.mode-row:hover .mode-image img {
+    transform: scale(1.15);
+}
+.mode-arrow {
+    color: orange;
+    font-size: 28px;
+    transition: 0.3s ease;
+}
+.mode-row:hover .mode-arrow {
+    transform: translateX(8px);
+}
+footer {
+        background-color: #0b0b0b;
+        color: white;
+        margin-top: 10px;
+       }
+       .footer-container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 30px;
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+       }
+       .footer-about {
+        max-width: 400px;
+       }
+       .footer-about h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+       }
+       .footer-about p {
+        color: #999;
+        line-height: 1.7;
+       }
+       .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+       }
+       .footer-links h3 {
+        margin-bottom: 10px;
+       }
+       .footer-links a {
+        color: #999;
+        text-decoration: none;
+        transition: 0.2s;
+       }
+       .footer-links a:hover {
+        color: orange;
+       }
+       .footer-bottom {
+        border-top: 1px solid #252525;
+        text-align: center;
+        padding: 20px;
+        color: #777;
+       }
+       .mode-row {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: modeEnter 0.7s ease forwards;
+}
+
+.mode-row:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.mode-row:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mode-row:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.mode-row:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.mode-row:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.mode-row:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.mode-row:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.mode-row:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+@keyframes modeEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+      <header class="site-header">
+    <div class="logo">
+        <span>CS2</span> WORLD
+    </div>
+    <nav class="main-nav">
+        <a href="../index.html">HOME</a>
+        <a href="../maps/maps.html">MAPS</a>
+        <a href="../weapons.html">WEAPON</a>
+        <a href="teams/team.html">TEAMS</a>
+        <a target="_blank" href="https://www.dexerto.com/counter-strike-2/">NEWS</a>
+        
+    </nav>
+<a target="_blank" href="https://store.steampowered.com/app/730/CounterStrike_2/" class="play-btn">PLAY CS2</a>
+   </header>
+    <main class="modes-page">
+
+        <div class="modes-header">
+            <span>COUNTER-STRIKE 2</span>
+            <h1>GAME MODES</h1>
+            <p>choose your battlefield</p>
+        </div>
+
+        <div class="modes-list">
+
+            <div class="mode-row">
+
+                <div class="mode-number">01</div>
+                <div class="mode-info">
+                    <span>5V5 • RANKED</span>
+                    <h2>PREMIER</h2>
+                    <p>The ultimate competitive experience</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_00000000518c81f48f2fe07f2d9a50e1.png" alt="premier">
+                </div>
+
+                <div class="mode-arrow">←</div>
+
+            </div>
+
+            <div class="mode-row">
+
+                <div class="mode-number">02</div>
+
+                <div class="mode-info">
+                    <span>5v5 • COMPETITIVE</span>
+                    <h2>COMETITIVE</h2>
+                    <p>Classic tactical team combat.</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_00000000789481f4a5eb3addb2c31a07.png" alt="competitive">
+                </div>
+
+                <div class="mode-arrow">←</div>
+            </div>
+        </div>
+        <div class="mode-row">
+
+            <div class="mode-number">03</div>
+
+            <div class="mode-info">
+                <span>UNRANKED • 10V10</span>
+                <h2>CASUAL</h2>
+                <p>Relaxed tactical gameplay with quick matches.</p>
+            </div>
+
+            <div class="mode-image">
+                <img src="file_00000000e58081f49e70d3614edfe670.png" alt="CASUAL">
+            </div>
+            <div class="mode-arrow">←</div>
+         </div>
+
+             <div class="mode-row">
+
+                <div class="mode-number">04</div>
+
+                <div class="mode-info">
+                    <span>FREE FOR ALL • FAST</span>
+                    <h2>DEATHMATCH</h2>
+                    <p>Jump into instant action and improve your aim.</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_00000000996481f9b556cd0d6bd72358.png" alt="deathmatch">
+                </div>
+                <div class="mode-arrow">←</div>
+             </div>
+
+             <div class="mode-row">
+
+                <div class="mode-number">05</div>
+
+                <div class="mode-info">
+                    <span>2V2 • COMPETITIVE</span>
+                    <h2>WINGMAN</h2>
+                    <p>Small teams, fast rounds, and intense teamwork.</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_00000000a51881f4be5b4faa7e6c7add.png" alt="wingman">
+                </div>
+
+                <div class="mode-arrow">←</div>
+             </div>
+
+             <div class="mode-row">
+
+                <div class="mode-number">06</div>
+
+                <div class="mode-info">
+                    <span>WEAPON PROGRESSION • FAST</span>
+                    <h2>ARMS RACE</h2>
+                    <p>Fight your way through a progression of weapons.</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_000000000f0c81f49fbfbf55af4eb78a.png" alt="arms race">
+                </div>
+
+                <div class="mode-arrow">←</div>
+             </div>
+
+             <div class="mode-row">
+
+                <div class="mode-number">07</div>
+
+                <div class="mode-info">
+                    <span>5V5 • OBJECTIVE</span>
+                    <h2>DEMOLITION</h2>
+                    <p>Win rounds and progress through diffrent weapons.</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_0000000027208211a4a6acb257a4e5c5.png" alt="DEMOLITION">
+                </div>
+
+                <div class="mode-arrow">←</div>
+
+             </div>
+       
+             <div class="mode-row">
+
+                <div class="mode-number">08</div>
+
+                <div class="mode-info">
+                    <span>4V3 • RETAKE</span>
+                    <h2>RETAKES</h2>
+                    <p>Fight to reclaim the bomb site in intense rounds.</p>
+                </div>
+
+                <div class="mode-image">
+                    <img src="file_00000000c2ac82118dd0387ef8068085.png" alt="RETAKES">
+                </div>
+
+                <div class="mode-arrow">←</div>
+             </div>
+
+    </main>
+
+
+
+
+
+
+
+   <footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <h2>CS2 WORLD</h2>
+            <P>
+                Your ultimate destination for
+                Counter-Strike 2.
+                Explore maps, teams, game modes and more.
+            </P>
+        </div>
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <a href="../index.html">Home</a>
+            <a href="../maps/maps.html">Maps</a>
+            <a href="../weapons.html">Weapons</a>
+            <a href="teams/team.html">Teams</a>
+            <a target="_blank" href="https://www.dexerto.com/counter-strike-2/">News</a>
+        </div>
+        <div class="footer-links">
+            <h3>FOLLOW US</h3>
+            <a href="#">YouTube</a>
+            <a href="#">Discord</a>
+            <a href="#">Instagram</a>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>©️ 2026 CS2 World. All rights reserved</p>
+    </div>
+</footer>
+</body>
+</html>

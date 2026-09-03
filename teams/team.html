@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 World - Teams</title>
+    <link rel="icon" href="../../file_00000000335c8243a36f62e7d1c72d21.png">
+</head>
+<style>
+    body {
+        background-color: #0b0b0b;
+    }
+    .teams-page {
+        min-height: calc(100vh - 80px);
+        padding: 25px 40px 80px;
+        text-align: center;
+        background: #0b0b0b;
+    }
+    .teams-page h1 {
+        margin: 0 0 8px;
+        font-size: 50px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        color: white;
+    }
+    .teams-subtitle {
+        margin: 0 0 35px;
+        color: #888;
+        font-size: 16px;
+    }
+    .teams-grid {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .team-card {
+        min-height: 350px;
+        padding: 30px;
+        background: #151515;
+        border: 1px solid #252525;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transition: 0.3s;
+        overflow: hidden;
+    }
+    .team-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 165, 0, 0.6);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+    .team-card img {
+        transform: scale(1.08);
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-bottom: 20px;
+        transition: 0.5s;
+        border-radius: 10px;
+    }
+    .team-card:hover img {
+        transform: scale(1.2);
+    }
+    .team-card h2 {
+        margin: 0 0 105px;
+        color: white;
+        font-size: 37px;
+        letter-spacing: 2px;
+        position: static;
+        margin-top: 100px;
+    }
+    .team-button {
+        display: inline-block;
+        padding: 11px 25px;
+        background: orange;
+        color: #111;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.3s;
+        position: static;
+    }
+    .team-button:hover {
+        background: white;
+        transform: translateY(-2px);
+    }
+    @media (max-width: 700px) {
+        .teams-page {
+            padding: 25px 20px 60px;
+        }
+        .teams-page h1 {
+            font-size: 38px;
+        }
+        .teams-grid {
+            grid-template-columns: 1fr;
+        }
+        .team-card {
+            min-height: 320px;
+        }
+    }
+    
+.site-header {
+    width: 100%;
+    height: 80px;
+
+    background: rgba(10, 10, 10, 0.96);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 165, 0, 0.35);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+
+.logo {
+    color: white;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: orange;
+}
+
+
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.main-nav a {
+    position: relative;
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: white;
+}
+
+
+
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    background: orange;
+
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+
+
+.play-btn {
+    display: inline-block;
+
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    background: orange;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background: white;
+
+    transform: translateY(-2px);
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+footer {
+        background-color: #0b0b0b;
+        color: white;
+        margin-top: 10px;
+       }
+       .footer-container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 30px;
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+       }
+       .footer-about {
+        max-width: 400px;
+       }
+       .footer-about h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+       }
+       .footer-about p {
+        color: #999;
+        line-height: 1.7;
+       }
+       .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+       }
+       .footer-links h3 {
+        margin-bottom: 10px;
+       }
+       .footer-links a {
+        color: #999;
+        text-decoration: none;
+        transition: 0.2s;
+       }
+       .footer-links a:hover {
+        color: orange;
+       }
+       .footer-bottom {
+        border-top: 1px solid #252525;
+        text-align: center;
+        padding: 20px;
+        color: #777;
+       }
+           body {
+        animation: pageEnter 0.7s ease-out;
+    }
+    @keyframes pageEnter {
+        from {
+            opacity: 0;
+            transform: translateY(35px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<body>
+   <header class="site-header">
+    <div class="logo">
+        <span>CS2</span>WORLD
+    </div>
+    <nav class="main-nav">
+        <a href="../index.html">HOME</a>
+        <a href="../maps/maps.html">MAPS</a>
+        <a href="../gamemode.html">GAMEMODES</a>
+        <a href="../weapons.html">WEAPONS</a>
+        <a target="_blank" href="https://www.dexerto.com/counter-strike-2/">NEWS</a>
+        
+    </nav>
+<a target="_blank" href="https://store.steampowered.com/app/730/CounterStrike_2/" class="play-btn">PLAY CS2</a>
+   </header>
+   <main class="teams-page">
+    <h1>CS2 TEAMS</h1>
+    <p class="teams-subtitle">
+        Explore the most popular Counter-Strike 2 teams.
+    </p>
+    <div class="teams-grid">
+        <div class="team-card">
+            <img src="images (3).jpg" alt="NAVI">
+            <h2>NAVI</h2>
+            <a href="pages/navi.html" class="team-button">VIEW TEAM</a>
+        </div>
+        <div class="team-card">
+            <img src="images 8.jpg" alt="VITALITY">
+            <h2>VITALITY</h2>
+            <a href="pages/vitality.html" class="team-button">VIEW TEAM</a>
+        </div>
+        <div class="team-card">
+            <img src="images112.jpg" alt="SPIRIT">
+            <h2 style="bottom: 10000px;">SPIRIT</h2>
+            <a href="pages/spirit.html" class="team-button">VIEW TEAM</a>
+        </div>
+        <div class="team-card">
+             <img src="images.jpg" alt="G2">
+                <h2>G2</h2>
+                <a href="pages/g2.html" class="team-button">VIEW TEAM</a>
+        </div>
+    </div>
+
+   </main>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <h2>CS2 WORLD</h2>
+            <P>
+                Your ultimate destination for
+                Counter-Strike 2.
+                Explore maps, teams, game modes and more.
+            </P>
+        </div>
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <a href="../index.html">Home</a>
+            <a href="../maps/maps.html">Maps</a>
+            <a href="../gamemode.html">Gamemodes</a>
+            <a href="../weapons.html">Weapons</a>
+            <a target="_blank" href="https://www.dexerto.com/counter-strike-2/">News</a>
+        </div>
+        <div class="footer-links">
+            <h3>FOLLOW US</h3>
+            <a href="#">YouTube</a>
+            <a href="#">Discord</a>
+            <a href="#">Instagram</a>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>©️ 2026 CS2 World. All rights reserved</p>
+    </div>
+</footer>
+</body>
+</html>
